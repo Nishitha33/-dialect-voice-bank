@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dialect Voice Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        🎙️ Dialect Voice Bank
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#record">Record</a>
+        <a href="#explore">Explore</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">
+                PRESERVE • RECORD • SHARE
+            </p>
+
+            <h1>
+                Every dialect<br>
+                deserves a voice.
+            </h1>
+
+            <p class="hero-text">
+                Dialect Voice Bank is an open-source platform
+                for recording, transcribing, and preserving
+                regional languages and dialects.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="scrollToRecord()" class="primary-btn">
+                    Record Your Voice
+                </button>
+
+                <button onclick="scrollToExplore()" class="secondary-btn">
+                    Explore Voices
+                </button>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="microphone">
+                🎙️
+            </div>
+
+            <h3>Your voice matters.</h3>
+
+            <p>
+                Help build an open-source collection
+                of voices from communities around the world.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECORD SECTION -->
+
+    <section id="record" class="section">
+
+        <div class="section-heading">
+
+            <p class="tagline">
+                CONTRIBUTE
+            </p>
+
+            <h2>
+                Record a dialect
+            </h2>
+
+            <p>
+                Record your voice or upload an audio file.
+                Your contribution can help preserve language
+                for future generations.
+            </p>
+
+        </div>
+
+
+        <div class="record-container">
+
+            <div class="record-box">
+
+                <div class="record-icon">
+                    🎤
+                </div>
+
+                <h3>Record your voice</h3>
+
+                <p>
+                    Record a short sentence in your
+                    regional dialect.
+                </p>
+
+                <button id="recordButton" class="primary-btn">
+                    Start Recording
+                </button>
+
+                <p id="recordStatus" class="status">
+                    Ready to record
+                </p>
+
+            </div>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    📁
+                </div>
+
+                <h3>Upload audio</h3>
+
+                <p>
+                    Upload an existing audio recording.
+                </p>
+
+                <label for="audioUpload" class="upload-button">
+                    Choose Audio
+                </label>
+
+                <input
+                    type="file"
+                    id="audioUpload"
+                    accept="audio/*"
+                >
+
+                <p id="fileName" class="status">
+                    No file selected
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRANSCRIPTION SECTION -->
+
+    <section class="transcription-section">
+
+        <div class="section-heading">
+
+            <p class="tagline">
+                SPEECH RECOGNITION
+            </p>
+
+            <h2>
+                Your transcription
+            </h2>
+
+            <p>
+                Once connected to our speech recognition
+                service, your recording will be converted
+                into text here.
+            </p>
+
+        </div>
+
+
+        <div class="transcription-box">
+
+            <div class="transcription-header">
+
+                <span>Transcription</span>
+
+                <span id="language">
+                    Language: Not detected
+                </span>
+
+            </div>
+
+            <div id="transcriptionText" class="transcription-content">
+
+                <p>
+                    Your transcription will appear here...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE SECTION -->
+
+    <section id="explore" class="section explore-section">
+
+        <div class="section-heading">
+
+            <p class="tagline">
+                EXPLORE
+            </p>
+
+            <h2>
+                Voices from communities
+            </h2>
+
+            <p>
+                Explore recordings contributed by people
+                preserving their regional languages.
+            </p>
+
+        </div>
+
+
+        <div class="voice-grid">
+
+            <div class="voice-card">
+
+                <div class="voice-card-icon">
+                    🔊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Telugu
+                    </h3>
+
+                    <p>
+                        Andhra Pradesh
+                    </p>
+
+                    <button class="listen-button"
+                            onclick="playDemo('Telugu')">
+                        ▶ Listen
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="voice-card">
+
+                <div class="voice-card-icon">
+                    🔊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Punjabi
+                    </h3>
+
+                    <p>
+                        Punjab
+                    </p>
+
+                    <button class="listen-button"
+                            onclick="playDemo('Punjabi')">
+                        ▶ Listen
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="voice-card">
+
+                <div class="voice-card-icon">
+                    🔊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Marathi
+                    </h3>
+
+                    <p>
+                        Maharashtra
+                    </p>
+
+                    <button class="listen-button"
+                            onclick="playDemo('Marathi')">
+                        ▶ Listen
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="voice-card">
+
+                <div class="voice-card-icon">
+                    🔊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Himachali
+                    </h3>
+
+                    <p>
+                        Himachal Pradesh
+                    </p>
+
+                    <button class="listen-button"
+                            onclick="playDemo('Himachali')">
+                        ▶ Listen
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about" class="about-section">
+
+        <div>
+
+            <p class="tagline">
+                ABOUT THE PROJECT
+            </p>
+
+            <h2>
+                Technology for language preservation.
+            </h2>
+
+        </div>
+
+        <div class="about-text">
+
+            <p>
+                Dialect Voice Bank combines web technology
+                and speech recognition to create accessible
+                language preservation tools.
+            </p>
+
+            <p>
+                Contributors can record their voices,
+                receive automated transcriptions, and help
+                create open-source datasets for
+                underrepresented languages.
+            </p>
+
+            <div class="technology-list">
+
+                <span>Next.js</span>
+                <span>FastAPI</span>
+                <span>Whisper</span>
+                <span>PostgreSQL</span>
+                <span>Docker</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Dialect Voice Bank
+    </p>
+
+    <p>
+        Open-source language preservation project
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
